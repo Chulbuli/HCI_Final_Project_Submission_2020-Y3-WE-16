@@ -389,10 +389,13 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-                        <div class="text-center"><button id="btn2" type="submit">Send Message</button></div>
-
+                
+                         
           </form>
-                     
+<br>
+
+             <button onclick="myFunction()"  type="submit" class="btn btn-outline-success my-2 my-sm-0" name="Login"  id="mybtn1" style="background: #18d26e; border-color:#18d26e; color: white; margin-left: 450px; width: 150px;height: 43px; ">Remove</button>
+
 
         </div>
 
@@ -446,7 +449,11 @@
       document.getElementById("nav-link").onclick = function () {
       location.href = "HomeNew.html"; }
 
-  
+  function myFunction() {
+    alert("Successfully Submitted");
+    location.href="HomeNew.html";
+
+      }
 
   
   
