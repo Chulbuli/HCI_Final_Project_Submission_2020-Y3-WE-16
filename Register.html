@@ -329,7 +329,7 @@ button.social-signin.google {
     <input type="password" name="password" placeholder="Password" />
     <input type="password" name="password2" placeholder="Retype password" />
     
-    <input type="submit" name="signup_submit" value="Sign me up" />
+    <button input type="submit" class="btn btn-outline-success my-2 my-sm-0" name="signup_submit"  id="mybtn" >Sign me up</button>
   </div>
   
   <div class="right">
@@ -351,6 +351,9 @@ button.social-signin.google {
   function myFunctionpost() {
   location.replace("Login.html")
   }
+
+  document.getElementById("mybtn").onclick = function () {
+      location.href = "Login.html"; }
 
 </script>
 

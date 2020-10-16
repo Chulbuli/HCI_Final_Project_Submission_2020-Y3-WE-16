@@ -443,8 +443,11 @@ input[type=text]:placeholder {
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
+      <!--<input type="submit" class="fadeIn fourth" value="Log In">-->
+          
+
+    </form><br>
+    <button input type="submit" class="btn btn-outline-success my-2 my-sm-0" name="Login"  id="mybtn1" style="background: #56baed; border-color:#56baed; color: white;  ">Log In</button>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
@@ -461,7 +464,8 @@ input[type=text]:placeholder {
   function myFunctionre() {
   location.replace("Register.html")
   }
-
+document.getElementById("mybtn1").onclick = function () {
+      location.href = "HomeNew.html"; }
   
 </script>
 

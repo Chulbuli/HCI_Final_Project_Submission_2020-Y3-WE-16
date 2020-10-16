@@ -363,17 +363,13 @@ body {
  
   
   
-  
-  <button class="btn" onclick="myFunction1()"
-  style="background-color: #4CAF50;
-  color:white;
-  width:250px;
-  margin-left:400px;
-  margin-bottom: 30px;
-  margin-top:30px
-  " >Submit</button>   
+
   </form> 
- 
+  
+  <button class="btn" id="btn1"
+  style="background-color: #4CAF50;color:white;width:250px;margin-left:400px;margin-bottom: 30px;margin-top:30px">Submit</button> 
+   
+
 </div>
 
 
@@ -381,10 +377,19 @@ body {
 
 
 
-<script>
-    function myFunction1() {
+<script type="text/javascript">
+  document.getElementById("btn1").onclick = function (){
+    location.href = "Edit Profile new.html";
     alert("Success");
   }
+
+
+
+   /* function myFunction1() {
+    alert("Success");
+    location.replace("Edit Profile new.html")
+
+  }*/
 
   function myfunction3() {
   location.replace("My Profile new.html")
@@ -394,14 +399,6 @@ body {
 
   
   </script>
-
-
-
-
-
-
-
-
 
 
 
