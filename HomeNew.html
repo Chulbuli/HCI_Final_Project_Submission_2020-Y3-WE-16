@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link href="slidbar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="slidbar/css/simple-sidebar.css" rel="stylesheet">
+
+<style>
+.social-icons {
+  text-align: right;
+  }  
+.social-icons li {
+  display:inline-block;
+  list-style-type:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  }
+.social-icons li a {
+  border-bottom: none;
+  }
+.social-icons li img {
+  width:40px;
+  height:40px;
+  margin-right: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 450px;
+  padding: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-item {
+  width: 100%;
+  height: calc(100vh - 114px);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#hero .carousel-item::before {
+  content: '';
+  background-color: rgba(13, 30, 45, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-content {
+  text-align: left;
+}
+
+@media (max-width: 992px) {
+  #hero, #hero .carousel-item {
+    height: calc(100vh - 70px);
+  }
+  #hero .carousel-content.container {
+    padding: 0 50px;
+  }
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+#hero p {
+  width: 80%;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  color: #fff;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+#hero .carousel-indicators li {
+  cursor: pointer;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 5px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 0;
+  background: #428bca;
+}
+
+#hero .btn-get-started:hover {
+  background: #1c5c93;
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+  #hero .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .member .social {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #124265;
+  margin: 0 10px;
+  padding-top: 8px;
+  display: inline-block;
+}
+
+.team .member .social a:hover {
+  color: #2487ce;
+}
+
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.team .member .member-info {
+  padding: 25px 15px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #124265;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #777777;
+}
+
+.team .member:hover .social {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us {
+  padding-bottom: 30px;
+}
+
+.why-us .card {
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.why-us .card-icon {
+  text-align: center;
+  margin-top: -32px;
+}
+
+.why-us .card-icon i {
+  font-size: 32px;
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  padding-top: 10px;
+  text-align: center;
+  background-color: #fd680e;
+  border-radius: 50%;
+  text-align: center;
+  border: 4px solid #fff;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.why-us .card-body {
+  padding-top: 12px;
+}
+
+.why-us .card-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.why-us .card-title a {
+  color: #743e1d;
+}
+
+.why-us .card-title a:hover {
+  color: #fd680e;
+}
+
+.why-us .card-text {
+  color: #5e5e5e;
+}
+
+.why-us .card:hover .card-icon i {
+  background: #fff;
+  color: #fd680e;
+}
+
+@media (max-width: 1024px) {
+  .why-us {
+    background-attachment: scroll;
+  }
+}
+
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;margin-left:620px">Select Your Location</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" style="width:180px;margin-left:2px">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	  <a class="navbar-brand" style="color:white">Welcome visitor!</a>
+	 
+    <button class="btn btn-light" onclick="myFunctionreg()" style="margin-left:10px">Register</button>	
+	<button class="btn btn-light" onclick="myFunctionlogin()" style="margin-left:10px">Login</button>	
+	<button class="btn btn-danger" onclick="myFunctionpost()" style="margin-left:10px">Post an Add</button>
+	
+    </ul>
+  </div>
+</nav>
+
+<div style="float:left">
+    <img src="img/logo5.png" style="width:200px;height:110px;filter:contrast(100%); background:#f8f9fa;" alt="wikkalk">
+</div>
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+  <input style="width:20%" placeholder="What are you looking for?" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <div  style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	
+	<div style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Category 1</a>
+          <a class="dropdown-item" href="#">Category 2</a>
+		  <a class="dropdown-item" href="#">Category 3</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+  <form class="form-inline my-2 my-lg-0" >
+    
+      <input id = "SearchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <!--<button onclick="mySearchFunction()" class="btn btn-outline-success my-2 my-sm-0">Search</button> -->
+    </form>
+    <button id="mybtnsear" onclick="myFunctionsearch()" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    
+</div>
+
+
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+<div style="width:15%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Language
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Tamil</a>
+		  <a class="dropdown-item" href="#">Hindi</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="margin-left:20px">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="My Profile new.html">My Profile</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="Contact us.html">Contact Us</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="adpost.html">Post Your AD</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+ <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Categories </div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Automotive</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Jobs</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Sports</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Education</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Funtime</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Electronic</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">pet & Children</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+
+
+<div class="d-flex flex-column" style="width:100%">
+ <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url('img/a.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to Vikka.lk</h2>
+                <p class="animate__animated animate__fadeInUp">Vikka.lk Sri Lanka's BEST Classified</p>
+           
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url('img/b.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Shoes Manufacturer</h2>
+                <p class="animate__animated animate__fadeInUp">Juki machine operator who can manufacture shoe needed on contract part time basis. Paid by per shoe 5000.00rs. For Private individual Business.</p>
+               
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url('img/c.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">DESIGNER BAGS FOR WOMEN</h2>
+                <p class="animate__animated animate__fadeInUp">These bags, though. We’ve got old school classics like Hermès Birkin and Gucci GG Marmont and then there’s our newer favourites like Simon Miller’s Bonsai and the JW Anderson Pierce Bag – hang on, did we just name all of your dream handbags?</p>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  
+
+
+<!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+<br><br>
+        <div class="section-title">
+          <h2>Top Ranking</h2>
+          
+        </div>
+        <hr>
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/iphone2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" onclick="myFunctionpro()" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Apple 11Pro</h4>
+                <span>Rs 150000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/bag.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Women Shoulder Handbag</h4>
+                <span>Rs 3500.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/apple5s.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>apple 5S</h4>
+                <span>Rs 25000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/cake.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Swirl Of Gems Chocolate Cake</h4>
+                <span>Rs 2500.00</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/mi5.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mi Band 5</h4>
+                <span>Rs 8750.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/dtracker.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Kawasaki D Tracker</h4>
+                <span>Rs 540000.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/dog.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Pedigree Dog Food</h4>
+                <span>Rs 1950.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+              <div class="member">
+                <div class="member-img">
+                  <img src="img/sani.jpeg" class="img-fluid" alt="">
+                  <div class="social">
+                    <button class="btn" style="background: #00F420;width:100%"><a class="btn" style="color: black" href="Sanitizer.html">READ MORE</a></button>
+                     
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Hand Sanitizer 100 ML bottle</h4>
+                  <span>Rs 840.00</span>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        
+<br>
+
+
+<div class="section-title">
+          <h2>Just for You</h2>
+          
+        </div>
+        <hr>
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/ek3.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>honda ek3</h4>
+                <span>Rs 230000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/asus.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" id="mybtn1"style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Asus VivoBook</h4>
+                <span>RS 150000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/tshirt.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Short Sleeve Round Neck T-shirt - Unisex</h4>
+                <span>Rs 1500.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="img/apple6s.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <button class="btn" style="background: #00F420;width:100%">READ MORE</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Apple 6s</h4>
+                <span>Rs 45000.00</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+<br>
+
+    </section><!-- End Team Section -->
+<br><br>
+  <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <img src="img/why-us-1.jpg" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bx bx-book-reader"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Mission</a></h5>
+                <p class="card-text">Advertisers and users are responsible for ensuring that advertising content, text, images, graphics, video ("Content") uploaded for inclusion on ikman.lk complies with all applicable laws. vikka.lk & Saltside Technologies AB assumes no responsibility for any illegality or any inaccuracy of the Content. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <img src="img/why-us-2.jpg" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bx bx-calendar-edit"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Plan</a></h5>
+                <p class="card-text">vikka.lk is a service provided by Saltside Technologies AB (subject to your compliance with the Terms and Conditions set forth below). Please read these Terms and Conditions before using this Web Site. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <img src="img/why-us-3.jpg" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bx bx-landscape"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Vision</a></h5>
+                <p class="card-text">vikka.lk and Saltside Technologies AB will collect information from Users and Advertisers. 
+          It is a condition of use of the vikka.lk that each User and advertiser consents and authorises vikka.lk and Saltside Technologies AB to collect and use this information. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+  
+  
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+       
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+  document.getElementById("nav-link").onclick = function () {
+  location.href = "Contact us.html"; }
+
+  document.getElementById("btn").onclick = function () {
+  location.href = "Safety tips.html"; }
+  
+  function myFunctionpost() {
+  location.replace("adpost.html")
+  }
+
+  function myFunctionsearch() {
+  location.replace("search.html")
+}
+  
+function myFunctionpro() {
+  location.replace("searchnext .html")
+}
+
+function myFunctionreg() {
+  location.replace("Register.html")
+  }
+
+  function myFunctionlogin() {
+  location.replace("Login.html")
+  }
+
+
+</script>
+
+
+  
+</body>
+
+<footer class="container-fluid text-center navbar-dark bg-dark" style="position:bottom;height:254px">
+	<br>
+  <table>
+	<tr>
+		<th style="width:400px;color:white">
+			Tips & Helps
+		</th>
+		<th style="width:400px;color:white">
+			Legal bits
+		</th>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link"  href="AboutUS.html" style="color:white;margin-top:0px">About Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="Terms of Use new.html" style="color:white;margin-top:0px">Terms of Use</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Blogs</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link"  href="privacy policy.html" style="color:white;margin-top:-15px">Private Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Help</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Posting Policy</a>
+		</td>
+		</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" id="btn" href="Safety tips.html" style="color:white;margin-top:-15px">Safety Tips</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Cookie Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="Contact us.html" style="color:white;margin-top:-15px">Contact Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px"></a>
+		</td>
+	</tr>
+  </table>
+
+
+			<ul class="social-icons">
+    			<li><a href="http://www.facebook.com"><img src='img/fb.png' /></a></li>
+    			<li><a href="http://www.twitter.com"><img src='img/tw.png' /></a></li>
+   				<li><a href="http://www.instagram.com"><img src='img/in.png' /></a></li>
+			</ul>
+	
+	
+	
+</footer>
+
+</html>
+

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Ads</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<style>
+.social-icons {
+  text-align: right;
+  }  
+.social-icons li {
+  display:inline-block;
+  list-style-type:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  }
+.social-icons li a {
+  border-bottom: none;
+  }
+.social-icons li img {
+  width:40px;
+  height:40px;
+  margin-right: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# Speakers Section
+--------------------------------------------------------------*/
+#speakers {
+  padding: 60px 0 30px 0;
+}
+
+#speakers .speaker {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+#speakers .speaker .details {
+  background: rgba(6, 12, 34, 0.76);
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  right: 0;
+  text-align: center;
+  padding-top: 10px;
+  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#speakers .speaker .details h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#speakers .speaker .details p {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+#speakers .speaker .details .social {
+  height: 30px;
+}
+
+#speakers .speaker .details a {
+  color: #fff;
+}
+
+#speakers .speaker .details a:hover {
+  color: #f82249;
+}
+
+#speakers .speaker:hover .details {
+  bottom: 0;
+}
+
+#speakers-details {
+  padding: 60px 0;
+}
+
+#speakers-details .details h2 {
+  color: #112363;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#speakers-details .details .social {
+  margin-bottom: 15px;
+}
+
+#speakers-details .details .social a {
+  background: #e9edfb;
+  color: #112363;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding-top: 9px;
+}
+
+#speakers-details .details .social a:hover {
+  background: #f82249;
+  color: #fff;
+}
+
+#speakers-details .details .social a i {
+  font-size: 18px;
+}
+
+#speakers-details .details p {
+  color: #112363;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;margin-left:620px">Select Your Location</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" style="width:180px;margin-left:2px">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	  <a class="navbar-brand" style="color:white">Welcome visitor!</a>
+	 
+    <button class="btn btn-light" style="margin-left:10px">Register</button>	
+	<button class="btn btn-light" style="margin-left:10px">Login</button>	
+	<button class="btn btn-danger" style="margin-left:10px">Post an Add</button>
+	
+    </ul>
+  </div>
+</nav>
+
+<div style="float:left">
+	<img src="img/logo5.png" style="width:200px;height:110px;filter:contrast(100%); background:#f8f9fa;" alt="wikkalk">
+</div>
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+  <input style="width:20%" placeholder="What are you looking for?" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <div  style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	
+	<div style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Category 1</a>
+          <a class="dropdown-item" href="#">Category 2</a>
+		  <a class="dropdown-item" href="#">Category 3</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+<div style="width:15%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Language
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Tamil</a>
+		  <a class="dropdown-item" href="#">Hindi</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="margin-left:20px">
+        <a class="nav-link" href="HomeNew.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">My Profile</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Post Your AD</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+    <!-- ======= Speakers Section ======= -->
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>My Ads</h2>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+              <img src="img/iphone.jpg" alt="Speaker 1" class="img-fluid">
+              <div class="details">
+                <h3><a href="searchnext .html">I Phone 11 Pro</a></h3>
+                <p>20 minutes ago</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
+              <img src="img/lap.jpg" alt="Speaker 2" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">ASUS Zenbook Pro Duo Ux51lv </a></h3>
+                <p>Item sold</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="img/p40.jpg" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">HUAWEI P40</a></h3>
+                <p>2 days ago</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+              <img src="img/watch2.jpg" alt="Speaker 4" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Apple Watch Series 3 GPS 38mm– Silver</h3>
+                <p>Item sold</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
+              <img src="img/hs.jpg" alt="Speaker 5" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Encore Pro 500 USB Series</a></h3>
+                <p>Week ago</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="img/jbl.jpg" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">JBL Pulse 3 Wireless Portable Speaker</a></h3>
+                <p>3 days ago</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End Speakers Section -->
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+<footer class="container-fluid text-center navbar-dark bg-dark" style="position:bottom;height:254px">
+	<br>
+  <table>
+	<tr>
+		<th style="width:400px;color:white">
+			Tips & Helps
+		</th>
+		<th style="width:400px;color:white">
+			Legal bits
+		</th>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:0px">About Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px">Terms of Use</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Blogs</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Private Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Help</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Posting Policy</a>
+		</td>
+		</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Safety Tips</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Cookie Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Contact Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px"></a>
+		</td>
+	</tr>
+  </table>
+
+
+			<ul class="social-icons">
+    			<li><a href="http://www.facebook.com"><img src='img/fb.png' /></a></li>
+    			<li><a href="http://www.twitter.com"><img src='img/tw.png' /></a></li>
+   				<li><a href="http://www.instagram.com"><img src='img/in.png' /></a></li>
+			</ul>
+	
+	
+	
+</footer>
+
+</html>
+

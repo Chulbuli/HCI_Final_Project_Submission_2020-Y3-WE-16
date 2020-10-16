@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Register Page	</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<style>
+.social-icons {
+  text-align: right;
+  }  
+.social-icons li {
+  display:inline-block;
+  list-style-type:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  }
+.social-icons li a {
+  border-bottom: none;
+  }
+.social-icons li img {
+  width:40px;
+  height:40px;
+  margin-right: 20px;
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-image: url('img/Pc1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: url('https://goo.gl/YbktSj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #32508E;
+}
+
+button.social-signin.twitter {
+  background: #55ACEE;
+}
+
+button.social-signin.google {
+  background: #DD4B39;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;margin-left:620px">Select Your Location</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" style="width:180px;margin-left:2px">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	  <a class="navbar-brand" style="color:white">Welcome visitor!</a>
+	 
+    <button class="btn btn-light" style="margin-left:10px">Register</button>	
+	<button class="btn btn-light"  onclick="myFunctionpost()" style="margin-left:10px">Login</button>	
+	<button class="btn btn-danger" style="margin-left:10px">Post an Add</button>
+	
+    </ul>
+  </div>
+</nav>
+
+<div style="float:left">
+	<img src="img/logo5.png" style="width:200px;height:123px;filter:contrast(100%); background:#f8f9fa;" alt="wikkalk">
+</div>
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+  <input style="width:20%" placeholder="What are you looking for?" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <div  style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	
+	<div style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Category 1</a>
+          <a class="dropdown-item" href="#">Category 2</a>
+		  <a class="dropdown-item" href="#">Category 3</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+<div style="width:15%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Language
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Tamil</a>
+		  <a class="dropdown-item" href="#">Hindi</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="margin-left:20px">
+        <a class="nav-link" href="HomeNew.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">My Profile</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Post Your AD</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- ======= Features Section ======= -->
+
+<div id="login-box">
+  <div class="left">
+    <h1>Register</h1>
+    
+    <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="E-mail" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="password2" placeholder="Retype password" />
+    
+    <input type="submit" name="signup_submit" value="Sign me up" />
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>
+
+<!-- End Features Section -->
+
+
+
+<script>
+  
+  function myFunctionpost() {
+  location.replace("Login.html")
+  }
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+<footer class="container-fluid text-center navbar-dark bg-dark" style="position:bottom;height:254px">
+	<br>
+  <table>
+	<tr>
+		<th style="width:400px;color:white">
+			Tips & Helps
+		</th>
+		<th style="width:400px;color:white">
+			Legal bits
+		</th>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:0px">About Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px">Terms of Use</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Blogs</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Private Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Help</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Posting Policy</a>
+		</td>
+		</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Safety Tips</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Cookie Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Contact Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px"></a>
+		</td>
+	</tr>
+  </table>
+
+
+			<ul class="social-icons">
+    			<li><a href="http://www.facebook.com"><img src='img/fb.png' /></a></li>
+    			<li><a href="http://www.twitter.com"><img src='img/tw.png' /></a></li>
+   				<li><a href="http://www.instagram.com"><img src='img/in.png' /></a></li>
+			</ul>
+	
+	
+	
+</footer>
+
+</html>
+

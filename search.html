@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<style>
+.social-icons {
+  text-align: right;
+  }  
+.social-icons li {
+  display:inline-block;
+  list-style-type:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  }
+.social-icons li a {
+  border-bottom: none;
+  }
+.social-icons li img {
+  width:40px;
+  height:40px;
+  margin-right: 20px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 115%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: green;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  left:930px;
+  top:870px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;margin-left:620px">Select Your Location</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" style="width:180px;margin-left:2px">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	  <a class="navbar-brand" style="color:white">Welcome visitor!</a>
+	 
+    <button class="btn btn-light" style="margin-left:10px">Register</button>	
+	<button class="btn btn-light" style="margin-left:10px">Login</button>	
+	<button class="btn btn-danger" style="margin-left:10px">Post an Add</button>
+	
+    </ul>
+  </div>
+</nav>
+
+<div style="float:left">
+	<img src="img/logo5.png" style="width:200px;height:110px;filter:contrast(100%); background:#f8f9fa;" alt="wikkalk">
+</div>
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+  <input style="width:20%" placeholder="What are you looking for?" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <div  style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Locations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Rathnapura</a>
+          <a class="dropdown-item" href="#">Anuradhapura</a>
+		  <a class="dropdown-item" href="#">Maharagama</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+	
+	<div style="width:12%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Category 1</a>
+          <a class="dropdown-item" href="#">Category 2</a>
+		  <a class="dropdown-item" href="#">Category 3</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+	
+  <form class="form-inline my-2 my-lg-0" >
+    
+    <input id = "SearchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <!--<button onclick="mySearchFunction()" class="btn btn-outline-success my-2 my-sm-0">Search</button> -->
+
+
+  </form>
+  <button id="mybtn" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  </div>
+</div>
+
+
+<div class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+<div style="width:15%;background-color:white;margin-left:2px">
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Language
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Tamil</a>
+		  <a class="dropdown-item" href="#">Hindi</a>
+        </div>
+      </li>
+	</ul>
+	</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="margin-left:20px">
+        <a class="nav-link" href="HomeNew.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">My Profile</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+	  <li class="nav-item" style="margin-left:40px">
+        <a class="nav-link" href="#">Post Your AD</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<div class="spli right" style="margin-left:940px; position: absolute; top:250px; ">
+  <h1>Refine Result</h1>
+  <p style="position: absolute; top:100px; font-size:20px;">Zip/Postal Code:</p>
+  <input type="text" id="fname" name="fname" style="position:absolute; top:160px; height:40px; width: 250px;">
+  <p style="position: absolute; top:250px; font-size:20px;">Radius: 50 miles</p>
+  <p id="text1" style="display:none; position: absolute; top:400px; font-size:20px;"> Price: Rs.1000- Rs.947 </p>
+  <p id="text2" style="display:none; position: absolute; top:400px; font-size:20px;">Price: Rs.0- Rs.1000 </p>
+
+  <label for="myCheck" style="position: absolute; top:530px;">Show Thousands:</label> 
+  <input type="checkbox" id="myCheck" style="position: absolute; top:535px; left:150px; "onclick="myFunction()">
+
+  <div class="slidecontainer" style="position: absolute; top:320px;">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  </div>
+  <div class="slidecontainer" style="position: absolute; top:470px;">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+  </div>
+</div>
+<br>
+<div class="split left">
+<div class="topic" style=" margin-left: 35%; margin-top: -20px;" >
+  <h1>IPhone 11 Pro</h1>
+</div>
+<br>
+<div class="para" style="text-align: left; margin-left: 35%; margin-top:1px;">
+<p>The Apple 11 pro is one of the best Apple 8 inch</p>
+<p>mobile phones and it looks pretty attractive too.</p>
+<p>At the care of this phone is 1 year warrenty.</p>
+
+</div> 
+
+
+
+
+
+<div class="phim">
+  <img src="img/iphone2.jpg" style="width: 250px; height: 160px; float: left; margin-left: 60px; margin-top:-185px;"><br>
+  </div>  
+  <div class="price" style="margin-left:100px; margin-top:-20px;">
+  <h2>Rs.150,000</h2>
+  </div>
+  <div class="lin" style="margin-left:460px; margin-top: -25px;">
+      <p><a href="searchnext .html" >Read more</a></p>
+    </div>
+<div class="topic2" style=" margin-left: 35%; margin-top:100px">
+<h1>HTC Sealed Phone</h1>
+</div>
+<div class="para1" style="text-align: left; margin-left: 35%; margin-top:30px;">
+<p>All HTC sealed or brand new phones sealed</p>
+<p>or 100% brand new phones.Friday 08 May 2015</p>
+<p>all phones are guaranteed.</p>
+</div>     
+<div class="phim">
+  <img src="img/htc.jpg" style="width: 250px; height: 150px; float: left; margin-left: 60px; margin-top:-180px;"><br>
+  </div>  
+</div>
+<div class="price" style="margin-left:100px; margin-top:-20px;">
+  <h2>Rs.30,800</h2>
+</div>
+<div class="lin" style="margin-left: 460px; margin-top: -25px; ">
+    <p><a href="searchnext .html" >Read more</a></p>
+
+  </div>
+
+<div class="topic3" style="  margin-left: 35%; margin-top:100px">
+<h1>IPhone 6 16Gb (Unlock)</h1>
+</div>
+<div class="para2" style="text-align: left; margin-left: 35%; margin-top:30px;">
+<p>The Iphone 6 16Gb new in box and no scratches.</p>
+<p>The Original Iphone packaging is included.please</p>
+<p>message if you have any questions.</p>
+</div>   
+<div class="price" style="margin-left:100px; margin-top:-0.5px;">
+  <h2>Rs.60,000</h2>
+</div>
+<div class="lin" style="margin-left: 460px; margin-top: -30px; margin-bottom: -20px;">
+    <p><a href="searchnext .html" >Read more</a></p>
+  </div>
+<div class="phim">
+  <img src="img/iphone6.jpeg" style="width: 250px; height: 150px; float: left; margin-left: 60px; margin-top:-220px;"><br>
+  </div>
+</div>
+
+<button id="btn1" class="button" style="vertical-align:middle"><span>Refine Result </span></button>
+
+
+
+</div>
+
+<script type="text/javascript">
+  document.getElementById("mybtn").onclick = function () {
+      location.href = "search.html"; }
+
+      document.getElementById("btn1").onclick = function () {
+      location.href = "search.html"; }
+      
+  var slider = document.getElementById("myRange");
+  var slider = document.getElementById("myRange1");
+
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+  
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+
+//function myFunction1() {
+  /*function myFunction1() {
+  var x = document.getElementById("SearchValue").value;
+
+  if (x==="phone") {
+    location.replace("forogot.html")
+  }
+  else if(x ==="car"){
+    location.replace("https://jupyter.org/try")
+
+  }
+
+  //location.replace("https://www.w3schools.com")  
+
+}*/
+
+
+function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var text1 = document.getElementById("text1");
+  var text2 = document.getElementById("text2");
+  
+
+  if (checkBox.checked == true){
+    text1.style.display = "block";
+    text2.style.display = "none";
+    //window.location.replace("http://www.w3schools.com");
+  } else {
+     text1.style.display = "none";
+
+     text2.style.display = "block";
+  }
+}
+
+
+  </script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+<footer class="container-fluid text-center navbar-dark bg-dark" style="position:bottom;height:254px">
+	<br>
+  <table>
+	<tr>
+		<th style="width:400px;color:white">
+			Tips & Helps
+		</th>
+		<th style="width:400px;color:white">
+			Legal bits
+		</th>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:0px">About Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px">Terms of Use</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Blogs</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Private Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Help</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Posting Policy</a>
+		</td>
+		</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Safety Tips</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:-15px">Cookie Policy</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:400px">
+			<a class="nav-link" href="#" style="color:white;margin-top:-15px">Contact Us</a>
+		</td>
+		<td style="width:400px">
+			<a  class="nav-link" href="#" style="color:white;margin-top:0px"></a>
+		</td>
+	</tr>
+  </table>
+
+
+			<ul class="social-icons">
+    			<li><a href="http://www.facebook.com"><img src='img/fb.png' /></a></li>
+    			<li><a href="http://www.twitter.com"><img src='img/tw.png' /></a></li>
+   				<li><a href="http://www.instagram.com"><img src='img/in.png' /></a></li>
+			</ul>
+	
+	
+	
+</footer>
+
+</html>
+
